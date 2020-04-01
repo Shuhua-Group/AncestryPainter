@@ -1,0 +1,31 @@
+
+###########################################
+Example:
+When we type the simplest command:
+
+perl AncestryPainter.pl -i ./example/data.ind -q ./example/data.Q 
+
+We can get the figure out.pdf (Figure1). the R script produced the figure out.r, the color used to draw the figure (out.color) and the ancestry file out.ancestry. 
+
+We could add the target population to be plotted in center, population order, colors, and define the output suffix by added the options, and get Uygur.pdf (Figure5), Uygur.r and Uygur.ancestry:
+
+perl AncestryPainter.pl -i ./example/data.ind -q ./example/data.Q -t Uygur -c ./example/color.file -p ./example/pop.order -o Uygur -l nolines -f png
+
+###########################################
+Command-line arguments enable the user to indicate certain options from the command line. 
+‘-q’: (required, input file) Define the individual Q-matrix file. Check ./example/data.Q for input format.
+
+‘-i’:  (required, input file) Define the population information of each individual. Check ./example/data.ind for input format.
+
+‘-t’: (optional, population name) Define the only target population to be plotted as a pie chart in the center of the circle figure. The population must be included in both of the required files.
+
+‘-p’: (optional, input files) Define the populations to be included in the figure, and the display order of the populations in the figure. Check ./example/pop.order for input format.
+
+‘-c’: (optional, input files) Define the colors of each ancestry in the figure. Check ./example/color.file for input format.
+
+‘-o’: (optional) Define the suffix of output files. ‘out’ by default. 
+
+‘-l nolines’: (optional) remove the black lines between populations. Default is keeping black lines (Figure6). 
+
+‘-f png’: (optional) output png figure instead of pdf figure. Default is pdf figure.  
+
